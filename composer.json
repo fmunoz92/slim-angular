@@ -1,0 +1,6 @@
+{
+    "require": {
+        "doctrine/orm": "2.3.4",
+        "slim/slim": "2.*"
+    }
+}

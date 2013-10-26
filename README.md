@@ -6,7 +6,8 @@ Example application(CRUD of articles) using angulajs with a php restfull  api(sl
 
 ```bash
 cd /var/www/ or cd yourlocalhostfolder
-$  git clone https://github.com/fmunoz92/slim-angular.git
+$ git clone https://github.com/fmunoz92/slim-angular.git
+$ cd slim-angular
 $ curl -s https://getcomposer.org/installer | php
 ```
 Configure db:

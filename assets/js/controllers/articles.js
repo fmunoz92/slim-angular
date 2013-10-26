@@ -26,10 +26,8 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$ro
 
     $scope.update = function() {
         var article = $scope.article;
-        if (!article.updated) {
-            article.updated = [];
-        }
-        article.updated.push(new Date().getTime());
+        var now = new Date();
+        article.updated = now.toString();
 
         article.$update(function() {
             $location.path('articles/' + article.id);

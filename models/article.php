@@ -1,10 +1,14 @@
 <?php
 
 /**
- * @Entity(repositoryClass="ArticleRepository") @Table(name="article")
+ * @Entity(repositoryClass="ArticleRepository") @Table(name="article") @HasLifecycleCallbacks 
  */
 class Article
 {
+    use ActiveEntity;
+    use Timestampable;
+    use SerializableEntity;
+
     /**
      * @Id @Column(type="integer") @GeneratedValue
      */
@@ -19,45 +23,6 @@ class Article
      * @Column(type="string")
      */
     protected $content;
-    
-    public function toArray()
-    {
-        return array("id" => $this->id,
-                     "title" => $this->title,
-                     "content" => $this->content);
-    }
-    
-    public function fromArray($atributes)
-    {
-        $this->setTitle($atributes["title"]); 
-        $this->setContent($atributes["content"]); 
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    public function setContent($content)
-    {
-        $this->content = $content;
-    }
-
 }
 
 /**
